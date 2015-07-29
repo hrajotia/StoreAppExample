@@ -1,0 +1,14 @@
+# Mac
+.DS_Store
+
+# WebStorm
+.idea
+
+# nodejs modules
+node_modules
+
+# bower components
+bower_components
+
+# Project Related
+build

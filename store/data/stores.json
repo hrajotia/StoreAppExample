@@ -1,0 +1,19 @@
+{
+   "stores" : [
+        {
+            "name" : "Red Stone",
+            "location": "Moon",
+            "id": 1
+        },
+        {
+            "name" : "Ice Cubes",
+            "location": "Pluto",
+            "id": 2
+        },
+        {
+            "name" : "Nature",
+            "location": "Earth",
+            "id": 3
+        }
+   ]
+}

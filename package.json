@@ -1,0 +1,29 @@
+{
+  "name": "StoreApp",
+  "version": "0.0.1",
+  "description": "Basic backbone.js and node.js example for REST based Store application.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hrajotia/StoreAppExample.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hrajotia/StoreAppExample/issues"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.13.1",
+    "underscore": "~1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Backbone",
+    "Node",
+    "Store"
+  ],
+  "author": "Himanshu Rajotia <hrajotia@gmail.com",
+  "license": "MIT"
+}

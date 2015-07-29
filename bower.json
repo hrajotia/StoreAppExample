@@ -1,0 +1,32 @@
+{
+  "name": "StoreApp",
+  "version": "0.0.1",
+  "authors": [
+    "Himanshu Rajotia <hrajotia@gmail.com>"
+  ],
+  "description": "Basic backbone.js and node.js example for REST based Store application.",
+  "main": "js/main.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "Backbone",
+    "Node",
+    "Store"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "~1.8.3",
+    "jquery": "~1.11.3",
+    "backbone": "~1.2.1"
+  }
+}
