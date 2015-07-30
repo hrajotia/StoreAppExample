@@ -16,3 +16,64 @@ body {
     word-wrap: break-word;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
+.clearfix:before, .clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.clearfix {
+    zoom: 1
+}
+
+.table {
+    display: table;
+}
+
+.table-title {
+    display: table-caption;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.table-heading {
+    display: table-row;
+    font-weight: bold;
+    text-align: center;
+}
+
+.table-body {
+    display: table-row-group;
+}
+
+.table-body > div:nth-child(2n-1) {
+    background-color: #F6F6F6
+}
+
+.table-body > div:nth-child(2n) {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-cell {
+    display: table-cell;
+    border: solid;
+    border-width: thin;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.store-table > .table-body > .store-item:hover {
+    cursor: pointer;
+    background-color: #DDD;
+}

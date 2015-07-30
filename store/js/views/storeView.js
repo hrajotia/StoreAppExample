@@ -1,59 +1,41 @@
-var StoreItemView = Backbone.View.extend({
-    tagName: "tr",
+define(function(require) {
 
-    className: "store-item-row",
+    var Backbone = require('backbone');
+    var StoreItemView = require('views/storeItemView');
 
-    template: _.template("<td><%= id %></td><td><%= name %></td><td><%= location %></td>"),
+    var StoreView = Backbone.View.extend({
 
-    events: {
-        "click": "itemClick"
-    },
+        tagName: "div",
 
-    initialize: function(options) {
-        this.listenTo(this.model, "sync", this.render);
-        this.render();
-    },
+        className: "table store-table",
 
-    render: function() {
-        this.$el.html(this.template(this.model.toJSON()));
-    },
+        template: _.template("<div class='table-title'>Store Data</div><div class='table-heading'><div class='table-cell'>ID</div><div class='table-cell'>Store Name</div><div class='table-cell'>Location</div></div><div class='table-body'></div>"),
 
-    itemClick: function(event) {
-        if(event && event.preventDefault) event.preventDefault();
-        Backbone.history.navigate('store/' + this.model.get('id'), {trigger: true});
-    }
+        events: {},
 
-});
+        initialize: function(options) {
+            this.listenTo(this.collection, "sync", this.renderStoreItem);
+            /*this.listenTo(storeRoute, "route", function() {
+                console.log("route change");
+            });*/
+            this.render();
+        },
 
-var StoreView = Backbone.View.extend({
-    tagName: "table",
+        render: function() {
+            this.$el.html(this.template());
+            this.renderStoreItem();
+        },
 
-    className: "store-table",
+        renderStoreItem: function() {
+            var $tbody = this.$('.table-body').empty();
+            this.collection.each(function(storeItem, index) {
+                var $storeItemView = new StoreItemView({model: storeItem}).$el;
+                $tbody.append($storeItemView);
+            });
+        }
 
-    template: _.template("<thead><tr><th>ID</th><th>Store Name</th><th>Location</th></tr></thead><tbody></tbody>"),
+    });
 
-    events: {
-    },
-
-    initialize: function(options) {
-        this.listenTo(this.collection, "sync", this.renderStoreItem);
-        /*this.listenTo(storeRoute, "route", function() {
-            console.log("route change");
-        });*/
-        this.render();
-    },
-
-    render: function() {
-        this.$el.html(this.template());
-        this.renderStoreItem();
-    },
-
-    renderStoreItem: function() {
-        var $tbody = this.$('tbody').empty();
-        this.collection.each(function(storeItem, index) {
-            var $storeItemView = new StoreItemView({model: storeItem}).$el;
-            $tbody.append($storeItemView);
-        });
-    }
+    return StoreView;
 
 });

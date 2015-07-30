@@ -1,4 +1,4 @@
-# BackbonePractice
+# Store App Example
 Basic backbone.js and node.js example for REST based Store application.
 
 ### Installation

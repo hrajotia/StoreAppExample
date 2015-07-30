@@ -1,9 +1,18 @@
-var StoreCollection = Backbone.Collection.extend({
+define(function(require) {
 
-    model: StoreModel,
+    var Backbone = require('backbone');
+    var StoreModel = require('models/storeModel');
 
-    url: "stores/",
+    var StoreCollection = Backbone.Collection.extend({
 
-    initialize: function() {}
+        model: StoreModel,
+
+        url: "stores/",
+
+        initialize: function() {}
+
+    });
+
+    return StoreCollection;
 
 });

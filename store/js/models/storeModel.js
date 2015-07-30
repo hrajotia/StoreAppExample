@@ -1,19 +1,28 @@
-var StoreModel = Backbone.Model.extend({
-    defaults: {
-        storeID: null,
-        location: ""
-    },
+define(function(require) {
 
-    url: function() {
-        return "store/" + this.id;
-    },
+    var Backbone = require('backbone');
 
-    initialize: function(options) {
-        if (options && options.url) {
-            this.url = options.url
-        }
-    },
+    var StoreModel = Backbone.Model.extend({
 
-    updateData: function() {},
+        defaults: {
+            storeID: null,
+            location: ""
+        },
+
+        url: function() {
+            return "store/" + this.id;
+        },
+
+        initialize: function(options) {
+            if (options && options.url) {
+                this.url = options.url
+            }
+        },
+
+        updateData: function() {},
+
+    });
+
+    return StoreModel;
 
 });
