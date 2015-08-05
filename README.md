@@ -3,7 +3,7 @@ Basic backbone.js and node.js example for REST based Store application.
 
 ### Installation
 #### Install Prerequisites
-Before you get started, you will need to install [Node.js](http://nodejs.org/) if you haven't already done so.
+Before you get started, you will need to install [Node.js](http://nodejs.org/) and [Git](http://git-scm.com/downloads) if you haven't already done so.
 
 Once you've got both Git and Node.js installed, the other components you'll need can be installed with the Node Package Manager - AKA [npm](https://npmjs.org/) - which **comes installed with Node.js**
 

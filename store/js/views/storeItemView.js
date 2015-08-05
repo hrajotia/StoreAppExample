@@ -1,6 +1,7 @@
 define(function(require) {
 
     var Backbone = require('backbone');
+    var Handlebars = require('handlebars');
 
     var StoreItemView = Backbone.View.extend({
 
@@ -8,7 +9,7 @@ define(function(require) {
 
         className: "table-row store-item",
 
-        template: _.template("<div class='table-cell'><%= id %></div><div class='table-cell'><%= name %></div><div class='table-cell'><%= location %></div>"),
+        template: Handlebars.compile("{{#if id}}<div class='table-cell'>{{ id }}</div>{{/if}} {{#if name}}<div class='table-cell'>{{ name }}</div>{{/if}} {{#if location}}<div class='table-cell'>{{ location }}</div>{{/if}}"),
 
         events: {
             "click": "itemClick"

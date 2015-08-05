@@ -1,6 +1,7 @@
 define(function(require) {
 
     var Backbone = require('backbone');
+    var Handlebars = require('handlebars');
     var StoreItemView = require('views/storeItemView');
 
     var StoreView = Backbone.View.extend({
@@ -9,7 +10,7 @@ define(function(require) {
 
         className: "table store-table",
 
-        template: _.template("<div class='table-title'>Store Data</div><div class='table-heading'><div class='table-cell'>ID</div><div class='table-cell'>Store Name</div><div class='table-cell'>Location</div></div><div class='table-body'></div>"),
+        template: Handlebars.compile("<div class='table-title'>Store Data</div><div class='table-heading'><div class='table-cell'>ID</div><div class='table-cell'>Store Name</div><div class='table-cell'>Location</div></div><div class='table-body'></div>"),
 
         events: {},
 

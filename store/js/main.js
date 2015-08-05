@@ -4,8 +4,18 @@ requirejs.config({
         jquery: '../../bower_components/jquery/dist/jquery',
         underscore: '../../bower_components/underscore/underscore',
         backbone: '../../bower_components/backbone/backbone',
+        handlebars: '../../bower_components/handlebars/handlebars'
     },
     shim: {
+        jquery: {
+            exports: '$'
+        },
+        underscore: {
+            exports: '_'
+        },
+        handlebars: {
+            exports: 'Handlebars'
+        },
         backbone: {
             deps: [
                 'underscore',
